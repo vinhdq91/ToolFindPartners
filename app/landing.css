@@ -1,0 +1,121 @@
+/* Landing page design. Used by the editor preview and the public page.
+   Container queries make the page fit both the narrow preview and a full screen. */
+
+.lp {
+  container-type: inline-size;
+  font-family: var(--lp-font);
+  color: #1f2328;
+  background: #fff;
+  line-height: 1.6;
+  font-size: 16px;
+  --lp-soft: color-mix(in srgb, var(--lp-c) 9%, white);
+  --lp-line: color-mix(in srgb, var(--lp-c) 22%, white);
+}
+.lp * { box-sizing: border-box; }
+.lp h1, .lp h2, .lp h3 { font-family: var(--lp-font); line-height: 1.2; margin: 0 0 14px; color: #111; }
+.lp h2 { font-size: 28px; text-align: center; margin-bottom: 26px; }
+.lp h2::after { content: ''; display: block; width: 48px; height: 3px; background: var(--lp-c); margin: 12px auto 0; border-radius: 2px; }
+.lp h3 { font-size: 18px; }
+.lp p { margin: 0 0 12px; }
+.lp a { color: var(--lp-c); }
+.lp-pre { white-space: pre-line; }
+
+.lp-for { background: var(--lp-c); color: #fff; text-align: center; padding: 8px 16px; font-size: 14px; }
+
+.lp-button {
+  display: inline-block; background: var(--lp-c); color: #fff !important; text-decoration: none;
+  padding: 12px 26px; border-radius: 999px; font-weight: 600; margin-top: 8px;
+}
+.lp-button:hover { filter: brightness(0.92); text-decoration: none; }
+
+/* Hero */
+.lp-hero { position: relative; padding: 90px 24px; text-align: center; background: var(--lp-soft); overflow: hidden; }
+.lp-hero.has-image { color: #fff; min-height: 420px; display: flex; align-items: center; justify-content: center; }
+.lp-hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lp-hero.has-image::before { content: ''; position: absolute; inset: 0; background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.55)); z-index: 1; }
+.lp-hero-inner { position: relative; z-index: 2; max-width: 720px; margin: 0 auto; }
+.lp-hero h1 { font-size: 40px; }
+.lp-hero.has-image h1 { color: #fff; }
+.lp-hero p { font-size: 18px; opacity: 0.95; }
+
+/* Sections */
+.lp-section { padding: 64px 24px; max-width: 1040px; margin: 0 auto; }
+.lp-section + .lp-section { border-top: 1px solid #f0f0f0; }
+.lp-placeholder { text-align: center; color: #8b949e; border: 2px dashed #d0d7de; border-radius: 10px; padding: 30px; }
+
+.lp-about { display: grid; gap: 32px; align-items: center; }
+.lp-about.has-image { grid-template-columns: 1fr 1fr; }
+.lp-about .lp-about-text h2 { text-align: left; }
+.lp-about .lp-about-text h2::after { margin-left: 0; }
+.lp-about:not(.has-image) { max-width: 760px; text-align: center; }
+.lp-about:not(.has-image) .lp-about-text h2 { text-align: center; }
+.lp-about:not(.has-image) .lp-about-text h2::after { margin-left: auto; }
+.lp-about-img { width: 100%; border-radius: 14px; aspect-ratio: 4 / 3; object-fit: cover; }
+
+.lp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+.lp-card { background: var(--lp-soft); border: 1px solid var(--lp-line); border-radius: 14px; padding: 24px; margin: 0; position: relative; }
+.lp-card p { margin: 0; color: #424a53; }
+.lp-num {
+  display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px;
+  border-radius: 50%; background: var(--lp-c); color: #fff; font-weight: 700; margin-bottom: 12px;
+}
+.lp-partners .lp-card { background: #fff; border-top: 4px solid var(--lp-c); }
+
+.lp-gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.lp-gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; }
+
+.lp-price-list { max-width: 640px; margin: 0 auto; }
+.lp-price { display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--lp-line); }
+.lp-price-name { font-weight: 600; }
+.lp-price-note { font-size: 14px; color: #59636e; }
+.lp-price-value { font-weight: 700; color: var(--lp-c); white-space: nowrap; }
+
+.lp-review blockquote { margin: 0 0 12px; font-style: italic; color: #24292f; }
+.lp-review figcaption { font-size: 14px; color: #59636e; }
+
+.lp-contact { text-align: center; }
+.lp-contact-list { max-width: 520px; margin: 10px auto 18px; text-align: left; }
+.lp-contact-row { display: flex; gap: 14px; padding: 10px 14px; border-radius: 8px; color: #1f2328 !important; text-decoration: none; }
+a.lp-contact-row:hover { background: var(--lp-soft); text-decoration: none; }
+.lp-contact-label { min-width: 90px; font-weight: 600; color: var(--lp-c); }
+
+/* Public page frame, preview banner and PDF button */
+.public-shell { background: #fff; min-height: 100vh; }
+.preview-banner { background: #fff4d6; color: #9a6700; text-align: center; font-size: 13px; padding: 6px 12px; }
+.pdf-button {
+  position: fixed; right: 18px; bottom: 18px; z-index: 50;
+  background: #fff; color: #1f2328; border: 1px solid #d0d7de; border-radius: 999px;
+  padding: 10px 18px; font: 600 14px system-ui, sans-serif; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.pdf-button:hover { background: #f6f8fa; }
+
+/* PDF / printing: A4, keep colors and photos, no buttons, no cut cards */
+@page { size: A4; margin: 0; }
+@media print {
+  .no-print { display: none !important; }
+  .public-shell { min-height: 0; }
+  .lp { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 14px; }
+  .lp-hero { padding: 60px 40px; }
+  .lp-hero.has-image { min-height: 330px; }
+  .lp-section { padding: 36px 48px; }
+  .lp h2 { break-after: avoid; }
+  .lp-section { break-inside: avoid; } /* keep a section on one page when it fits */
+  .lp-card, .lp-price, .lp-contact-row, .lp-gallery-grid img, .lp-about-img { break-inside: avoid; }
+  .lp-gallery-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+  .lp-button { box-shadow: none; }
+  .lp-contact .lp-button { display: none; }
+  .lp a { text-decoration: none; }
+}
+
+/* Small screens and the narrow editor preview */
+@container (max-width: 640px) {
+  .lp-hero { padding: 60px 18px; }
+  .lp-hero.has-image { min-height: 320px; }
+  .lp-hero h1 { font-size: 30px; }
+  .lp-hero p { font-size: 16px; }
+  .lp h2 { font-size: 23px; }
+  .lp-section { padding: 44px 18px; }
+  .lp-about.has-image { grid-template-columns: 1fr; }
+  .lp-gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
