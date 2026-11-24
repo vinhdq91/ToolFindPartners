@@ -19,8 +19,10 @@ export default function Shell({ children }) {
         <Link href="/" className="logo">Partner Outreach</Link>
         <nav>
           <Link href="/">Dashboard</Link>
+          <Link href="/groups">Groups</Link>
           <Link href="/landing">Landing pages</Link>
           <Link href="/add">+ Add partner</Link>
+          <Link href="/settings">Settings</Link>
         </nav>
       </header>
       <main className="container">{children}</main>

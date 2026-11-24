@@ -113,6 +113,24 @@ code { font-size: 13px; background: #eef0f3; padding: 2px 6px; border-radius: 4p
 .swatch { width: 18px; height: 18px; border-radius: 4px; display: inline-block; }
 .block-list { margin: 0 0 12px; padding-left: 20px; line-height: 1.9; }
 
+/* Facebook groups */
+.group-row { background: #fff; border: 1px solid #e3e6ea; border-radius: 10px; margin-bottom: 10px; }
+.group-row.is-open { border-color: #0b63c5; }
+.group-head { display: grid; grid-template-columns: 1fr 170px auto; gap: 14px; align-items: center; padding: 12px 14px; }
+@media (max-width: 800px) { .group-head { grid-template-columns: 1fr; } }
+.group-title a { font-weight: 600; }
+.group-last { font-size: 14px; }
+.group-last.too-soon { color: #b42318; }
+.group-body { padding: 4px 14px 14px; border-top: 1px solid #eef0f3; }
+.group-options { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0; }
+.group-options label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: #59636e; }
+.group-settings { margin-top: 8px; }
+.link-button { border: none; background: none; color: #0b63c5; }
+.link-button:hover { background: none; text-decoration: underline; }
+.badge.kind-hospitality { background: #ddf4ff; color: #0969da; }
+.badge.kind-job { background: #fff4d6; color: #9a6700; }
+.badge.kind-tourist { background: #dcf5e3; color: #1a7f37; }
+
 /* Landing page editor */
 .settings-summary { cursor: pointer; font-weight: 600; }
 .ed-layout { display: grid; grid-template-columns: minmax(340px, 420px) 1fr; gap: 20px; align-items: start; }
